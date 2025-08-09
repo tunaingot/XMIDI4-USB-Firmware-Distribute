@@ -20,6 +20,7 @@ USBメモリの中に、このページからダウンロードした拡張子�
 7. 本体側面のディップスイッチの ***1*** をOFFにします
 8. USBメモリを抜きます
 9. 通常通りXMIDI4 USBが起動します
+<img width="1454" height="333" alt="update" src="https://github.com/user-attachments/assets/d952d134-b285-4b72-8e84-ed441b03572b" />
 
 # ファームウェアのアップデートに失敗した場合
 - 手順を間違えても、1からやり直せば再度書き込みができます
