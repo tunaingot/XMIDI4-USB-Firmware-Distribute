@@ -139,13 +139,13 @@ ON / OFFの設定がCH個別に指定可能です。
 
 |  | Message |
 | ---- | ------- |
-|1|Note Off|
-|2|Note On|
-|3|Poly Key Pressure|
-|4|Control Change|
-|5|Program Change|
-|6|CH Pressure|
-|7|Pitch Bend|
+|8x|Note Off|
+|9x|Note On|
+|Ax|Poly Key Pressure|
+|Bx|Control Change|
+|Cx|Program Change|
+|Dx|CH Pressure|
+|Ex|Pitch Bend|
 
 Note OffをフィルタでOFFにすると、音が鳴り止まなくなりますのでご注意ください。\
 現実的な設定項目ではありませんが、データ処理の関係で設けてあります。
@@ -155,14 +155,14 @@ ON / OFFの設定がCH個別に指定可能です。
 
 |  | Message |
 | ---- | ------- |
-|1|All Sound Off|
-|2|Reset All Controller|
-|3|Local Control|
-|4|All Note Off|
-|5|Omni Off|
-|6|Omni On|
-|7|Mono Mode On|
-|8|Poly Mode On|
+|120|All Sound Off|
+|121|Reset All Controller|
+|122|Local Control|
+|123|All Note Off|
+|124|Omni Off|
+|125|Omni On|
+|126|Mono Mode On|
+|127|Poly Mode On|
 
 ### System Message
 ON / OFFの設定がメッセージ毎に指定可能です。
@@ -184,16 +184,36 @@ F7が個別にON / OFFできるようになっていますが、内部処理で�
 ### Control Change
 よく利用されるコントロール・チェンジのON / OFF設定がCH個別に指定可能です。
 
-|   | Message | CC# |  | Message | CC# |  | Message | CC# |
-| - | ------- | --- |- | ------- | --- |- | ------- | --- |
-|1|Modulation|1|9|Cut Off|74|17|Envelope Release|72|
-|2|Volume|7|10|Resonance|71|18|Chorus|93|
-|3|Expression|11|11|Vibrato Rate|76|19|Reverb|91|
-|4|Pan Pot|10|12|Vibrato Depath|77|20|||
-|5|Hold Pedal|64|13|Vibrato Delay|78|21|||
-|6|Sostenuto Pedal|66|14|Portamento Time|5|22|||
-|7|Soft Pedal|67|15|Envelope Attack|73|23|||
-|8|Bank Select|0/32|16|Envelope Decay|75|24|||
+| Message | CC# | Message | CC# | Message | CC# |
+| ------- | --- | ------- | --- | ------- | --- |
+|Modulation|1|Cut Off|74|Envelope Release|72|
+|Volume|7|Resonance|71|Chorus|93|
+|Expression|11|Vibrato Rate|76|Reverb|91|
+|Pan Pot|10|Vibrato Depath|77|||
+|Hold Pedal|64|Vibrato Delay|78|||
+|Sostenuto Pedal|66|Portamento Time|5|||
+|Soft Pedal|67|Envelope Attack|73|||
+|Bank Select|0/32|Envelope Decay|75|||
 
-現在20〜24は定義されていません。 \
-将来追加する可能性があります。
+### Special Bit
+特殊なデータのフィルタとして用意してあります。
+
+|bit|Function|
+|---|--------|
+|0|SC-88ディスプレイデータ|
+
+### Key Range
+CH毎にキーレンジ、オクターブが指定可能です。\
+MIDIインターフェース側でスプリット演奏を実現することを想定したものです。
+
+## チャンネル・マッピング機能
+CHを入れ替える機能です。\
+さらにCHを入れ替えるだけでなく、1つの入力CHに対して複数のCHを指定して出力することも可能です。\
+1つのMIDIチャンネルで、他チャンネルのスプリットを実現するときなどに利用します。
+
+## ルーティング機能
+MIDI INをどのMIDI OUTへ出力するかをCH毎に設定可能です。\
+MIDI OUTを複数指定することも可能です。\
+システム・メッセージ、SC-88ディスプレイデータを個別にルーティング、ミュートすることが可能です。\
+
+
