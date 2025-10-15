@@ -20,9 +20,25 @@ USBメモリの中に、このページからダウンロードした拡張子�
 7. 本体側面のディップスイッチの ***1*** をOFFにします
 8. USBメモリを抜きます
 9. 通常通りXMIDI4 USBが起動します
-<img width="1454" height="333" alt="update" src="https://github.com/user-attachments/assets/d952d134-b285-4b72-8e84-ed441b03572b" />
+<img width="1292" height="289" alt="image" src="https://github.com/user-attachments/assets/02c74b41-4777-4cdd-965b-668b95e0b0e9" />
+
 
 # ファームウェアのアップデートに失敗した場合
 - 手順を間違えても、1からやり直せば再度書き込みができます
 - アップデート中に停電などで中断しても、1からやり直せば再度書き込みができます
+
+# 各部の名称と機能
+<img width="798" height="673" alt="image" src="https://github.com/user-attachments/assets/867b9090-6202-4c02-9a82-c4911f82a534" />
+
+1. MIDI INインジケータ : MIDI入力があると点滅します
+2. MIDI OUTインジケータ : MIDI OUTに出力されると点滅します
+3. USB IN/OUTインジケータ : USBの入出力があると点滅します
+4. MIDI IN出力先選択 : 入ってきた信号をどのMIDI OUTに出力するかを選択します
+5. USBメモリ用コネクタ : ファームウェアのアップデート、設定(後述)の保存・更新でUSBメモリを使用します
+6. 動作選択スイッチ : ファームウェアのアップデート、本体動作モード(後述)の選択で使用します
+7. 動作インジケータ : ファームウェアのアップデート、USBメモリの動作を表示します
+8. MIDI OUTコネクタ : MIDI機器のMIDI INコネクタと接続します
+9. MIDI INコネクタ : MIDI機器のMIDI OUTコネクタと接続します
+10. PC/ACアダプタ用USBコネクタ : PCまたはACアダプタを接続します
+
 
