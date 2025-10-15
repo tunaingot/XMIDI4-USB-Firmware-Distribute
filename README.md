@@ -56,7 +56,7 @@ MIDI INの出力先は下表のように固定です。\
 USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理して出力されます。
 
 |MIDI IN|MIDI OUT出力先|
-| ------------| --------------|
+| :----------:| :-----------: |
 | 1|1|
 | 2|2|
 | 3|3|
@@ -138,7 +138,7 @@ macOS専用で、GitHubで公開しています。
 ON / OFFの設定がCH個別に指定可能です。
 
 |  | Message |
-| ---- | ------- |
+| :--: | ------- |
 |8x|Note Off|
 |9x|Note On|
 |Ax|Poly Key Pressure|
@@ -154,7 +154,7 @@ Note OffをフィルタでOFFにすると、音が鳴り止まなくなります
 ON / OFFの設定がCH個別に指定可能です。
 
 |  | Message |
-| ---- | ------- |
+| :--: | ------- |
 |120|All Sound Off|
 |121|Reset All Controller|
 |122|Local Control|
@@ -168,7 +168,7 @@ ON / OFFの設定がCH個別に指定可能です。
 ON / OFFの設定がメッセージ毎に指定可能です。
 
 |  | Message | | Message |
-| ---- | ------- | ---- | -----|
+| :--: | ------- | :--: | -----|
 |F0|Start of SYSEX|F8|Timing Clock|
 |F1|MIDI Time Code|F9|Start|
 |F2|Song Position|FA|Continue|
@@ -185,7 +185,7 @@ F7が個別にON / OFFできるようになっていますが、内部処理で�
 よく利用されるコントロール・チェンジのON / OFF設定がCH個別に指定可能です。
 
 | Message | CC# | Message | CC# | Message | CC# |
-| ------- | --- | ------- | --- | ------- | --- |
+| ------- | --: | ------- | --: | ------- | --: |
 |Modulation|1|Cut Off|74|Envelope Release|72|
 |Volume|7|Resonance|71|Chorus|93|
 |Expression|11|Vibrato Rate|76|Reverb|91|
@@ -199,7 +199,7 @@ F7が個別にON / OFFできるようになっていますが、内部処理で�
 特殊なデータのフィルタとして用意してあります。
 
 |bit|Function|
-|---|--------|
+|:-:|--------|
 |0|SC-88ディスプレイデータ|
 
 ### Key Range
@@ -214,6 +214,6 @@ CHを入れ替える機能です。\
 ## ルーティング機能
 MIDI INをどのMIDI OUTへ出力するかをCH毎に設定可能です。\
 MIDI OUTを複数指定することも可能です。\
-システム・メッセージ、SC-88ディスプレイデータを個別にルーティング、ミュートすることが可能です。\
+システム・メッセージ、SC-88ディスプレイデータを個別にルーティング、ミュートすることが可能です。
 
 
