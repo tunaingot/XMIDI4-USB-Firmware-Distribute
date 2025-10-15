@@ -41,4 +41,159 @@ USBメモリの中に、このページからダウンロードした拡張子�
 9. MIDI INコネクタ : MIDI機器のMIDI OUTコネクタと接続します
 10. PC/ACアダプタ用USBコネクタ : PCまたはACアダプタを接続します
 
+# MIDI信号の流れと動作モード
+## スルーモード
+<img width="614" height="333" alt="image" src="https://github.com/user-attachments/assets/74d207fe-5a12-487e-ba8c-d712b7ef441e" />
 
+下記のスイッチ設定でスルーモードで動作します。
+
+|⑥動作選択スイッチ|④MIDI IN出力先選択|
+| ------------| --------------|
+| 1:OFF, 2:OFF|すべてOFF|
+
+MIDI INの出力先は下表のように固定です。\
+フィルタ設定、チャンネルマッピング設定はなく、MIDI INに来た信号すべてをそのままMIDI OUTに出力します。\
+USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理して出力されます。
+
+|MIDI IN|MIDI OUT出力先|
+| ------------| --------------|
+| 1|1|
+| 2|2|
+| 3|3|
+| 4|4|
+
+## スイッチルーティングモード
+<img width="614" height="366" alt="image" src="https://github.com/user-attachments/assets/f2f17b8e-b4fb-43f6-86b0-4a624edd1af3" />
+
+下記のスイッチ設定でスイッチルーティングモードで動作します。
+
+|⑥動作選択スイッチ|④MIDI IN出力先選択|
+| ------------| --------------|
+| 1:OFF, 2:OFF|いずれかがON|
+
+MIDI INの出力先は④MIDI IN出力先選択のスイッチで選択したMIDI OUTに出力されます。\
+フィルタ設定、チャンネルマッピング設定はなく、MIDI INに来た信号全てをそのまま選択したMIDI OUTに出力します。\
+USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理して出力されます。
+
+異なるMIDI INで同じMIDI OUTを選択した場合、ミキシング処理してMIDI OUTに出力します。\
+出力先選択スイッチが全てOFFの場合、そのMIDI INに入ってきた信号はUSBだけに送られます。
+
+## プログラムモード
+<img width="614" height="588" alt="image" src="https://github.com/user-attachments/assets/bca6a041-0e9e-428a-a3c7-4864aa2c6db4" />
+
+下記のスイッチ設定でプログラムモードで動作します。
+
+|⑥動作選択スイッチ|④MIDI IN出力先選択|
+| ------------| --------------|
+| 1:OFF, 2:ON|無関係|
+
+内蔵ストレージに保存されているMIDI INの出力先設定、フィルタ設定、チャンネルマッピング設定等、全てが適用されます。
+
+### パッチ(設定)の編集アプリ
+プログラムモードの設定編集は、専用のアプリ[XMIDI USB Editor](https://github.com/tunaingot/XMIDI-USB-Editor-Distribute)で行います。\
+macOS専用で、GitHubで公開しています。
+
+### パッチについて
+パッチは本体内に32持つことができます。\
+電源投入時はパッチ番号1が選択されています。\
+パッチの選択は
+
+- バンクセレクトを併用したプログラムチェンジ
+- コントロールチェンジ
+
+のいずれか、または両方で行うことができます。\
+バンクセレクトの番号、コントロールチェンジの番号も専用のアプリで変更することができます。
+
+パッチの選択はどのMIDI INからでも可能です。\
+そのため、接続しているMIDI機器で使用していないバンクセレクト、コントロールチェンジを選んでください。\
+また、パッチを選択するプログラムチェンジ、バンクセレクト、コントロールチェンジはMIDI OUT、およびUSBには送信されません。
+
+### 本体内でのパッチデータの扱い
+<img width="607" height="264" alt="image" src="https://github.com/user-attachments/assets/6016ef16-da52-4a2d-bcc8-baac6dd16b48" />
+
+パッチデータは電源を切っても消えない内蔵ストレージに保存されています。\
+電源投入後、内蔵ストレージからメモリーに読み出されます。\
+さらに選択されたパッチをテンポラリに読み出し、フィルタなどの演算やパッチ編集で利用します。
+
+### パッチデータの取り出し
+32個のパッチは「**CCMRAM.XMB**」というファイルをUSBメモリを使って取り出すことができます。\
+ファイルが入っていないUSBメモリを挿入すると、**CCMRAM.XMB**がUSBメモリの中にコピーされます。
+
+### 取り出したパッチデータの扱い
+専用アプリを使って、本体へ転送することができます。\
+また、XMBファイルをUSBメモリに入れて本体に挿入すると、本体のメモリーへ転送されます。\
+ファイル名は半角英数8文字まで認識します。\
+主に
+
+1. MacユーザーにCCMRAM.XMBファイルを渡す
+2. これを元にデータを編集してもらう
+3. 編集したXMBファイルを受け取る
+4. 受け取ったXMBファイルをUSBメモリに入れて本体に挿入
+5. メモリーに転送後、内蔵ストレージに自動保存
+
+というMacを所有していない方向けに用意した機能ですが、あまり実用的なものではありませんので、Macの導入をご検討ください。
+
+## フィルタ機能
+### CH Message
+ON / OFFの設定がCH個別に指定可能です。
+
+|  | Message |
+| ---- | ------- |
+|1|Note Off|
+|2|Note On|
+|3|Poly Key Pressure|
+|4|Control Change|
+|5|Program Change|
+|6|CH Pressure|
+|7|Pitch Bend|
+
+Note OffをフィルタでOFFにすると、音が鳴り止まなくなりますのでご注意ください。\
+現実的な設定項目ではありませんが、データ処理の関係で設けてあります。
+
+### Mode Message
+ON / OFFの設定がCH個別に指定可能です。
+
+|  | Message |
+| ---- | ------- |
+|1|All Sound Off|
+|2|Reset All Controller|
+|3|Local Control|
+|4|All Note Off|
+|5|Omni Off|
+|6|Omni On|
+|7|Mono Mode On|
+|8|Poly Mode On|
+
+### System Message
+ON / OFFの設定がメッセージ毎に指定可能です。
+
+|  | Message | | Message |
+| ---- | ------- | ---- | -----|
+|F0|Start of SYSEX|F8|Timing Clock|
+|F1|MIDI Time Code|F9|Start|
+|F2|Song Position|FA|Continue|
+|F3|Song Select|FB|Stop|
+|F4||FC||
+|F5||FD||
+|F6|Tune Request|FE|Active Sensing|
+|F7|End of SYSEX|FF|System Reset|
+
+F7が個別にON / OFFできるようになっていますが、内部処理ではF0と連動しています。\
+データ処理の関係で設けてあります。
+
+### Control Change
+よく利用されるコントロール・チェンジのON / OFF設定がCH個別に指定可能です。
+
+|   | Message | CC# |  | Message | CC# |  | Message | CC# |
+| - | ------- | --- |- | ------- | --- |- | ------- | --- |
+|1|Modulation|1|9|Cut Off|74|17|Envelope Release|72|
+|2|Volume|7|10|Resonance|71|18|Chorus|93|
+|3|Expression|11|11|Vibrato Rate|76|19|Reverb|91|
+|4|Pan Pot|10|12|Vibrato Depath|77|20|||
+|5|Hold Pedal|64|13|Vibrato Delay|78|21|||
+|6|Sostenuto Pedal|66|14|Portamento Time|5|22|||
+|7|Soft Pedal|67|15|Envelope Attack|73|23|||
+|8|Bank Select|0/32|16|Envelope Decay|75|24|||
+
+現在20〜24は定義されていません。 \
+将来追加する可能性があります。
