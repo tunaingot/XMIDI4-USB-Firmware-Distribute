@@ -109,7 +109,7 @@ macOS専用で、GitHubで公開しています。
 また、パッチを選択するプログラムチェンジ、バンクセレクト、コントロールチェンジはMIDI OUT、およびUSBには送信されません。
 
 ### 本体内でのパッチデータの扱い
-<img width="607" height="264" alt="image" src="https://github.com/user-attachments/assets/6016ef16-da52-4a2d-bcc8-baac6dd16b48" />
+<img width="607" height="264" alt="image" src="https://github.com/user-attachments/assets/248c90f4-9763-4c46-970d-a2f7d91ee367" />
 
 パッチデータは電源を切っても消えない内蔵ストレージに保存されています。\
 電源投入後、内蔵ストレージからメモリーに読み出されます。\
