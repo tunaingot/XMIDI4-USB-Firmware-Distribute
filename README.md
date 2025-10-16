@@ -1,8 +1,9 @@
 # USB-MIDIインターフェース 「XMIDI4 USB」 ファームウェア
 ファームウェアのファイルは拡張子が ***mot*** のモトローラSレコードです。\
 拡張子前の数字二桁がバージョンを表しており、***10*** が初回リリースです。\
-最新のファームウェアは、このページの右側の ***Release*** からダウンロードできます。\
-<img width="185" height="352" alt="スクリーンショット 2025-07-31 15 05 01" src="https://github.com/user-attachments/assets/763e9291-8b5d-4b31-a37f-751290c3e2c1" />
+最新のファームウェアは、このページの右側の ***Release*** からダウンロードできます。
+
+<img width="185" height="352" src="images/100_リリースの場所.png">
 
 
 # ファームウェアのアップデートに必要なもの
@@ -20,15 +21,15 @@ USBメモリの中に、このページからダウンロードした拡張子�
 7. 本体側面のディップスイッチの ***1*** をOFFにします
 8. USBメモリを抜きます
 9. 通常通りXMIDI4 USBが起動します
-<img width="1292" height="289" alt="image" src="https://github.com/user-attachments/assets/02c74b41-4777-4cdd-965b-668b95e0b0e9" />
 
+<img width="826" height="184" src="images/200_本体側面解説.png" />
 
 # ファームウェアのアップデートに失敗した場合
 - 手順を間違えても、1からやり直せば再度書き込みができます
 - アップデート中に停電などで中断しても、1からやり直せば再度書き込みができます
 
 # 各部の名称と機能
-<img width="798" height="673" alt="image" src="https://github.com/user-attachments/assets/867b9090-6202-4c02-9a82-c4911f82a534" />
+<img width="798" height="673" alt="image" src="images/300_各部の名称.png" />
 
 1. MIDI INインジケータ : MIDI入力があると点滅します
 2. MIDI OUTインジケータ : MIDI OUTに出力されると点滅します
@@ -43,7 +44,7 @@ USBメモリの中に、このページからダウンロードした拡張子�
 
 # MIDI信号の流れと動作モード
 ## スルーモード
-<img width="614" height="333" alt="image" src="https://github.com/user-attachments/assets/74d207fe-5a12-487e-ba8c-d712b7ef441e" />
+<img width="614" height="333" alt="image" src="images/400_スルーモードブロック図.png" />
 
 下記のスイッチ設定でスルーモードで動作します。
 
@@ -63,7 +64,7 @@ USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理�
 | 4|4|
 
 ## スイッチルーティングモード
-<img width="614" height="366" alt="image" src="https://github.com/user-attachments/assets/f2f17b8e-b4fb-43f6-86b0-4a624edd1af3" />
+<img width="614" height="366" alt="image" src="images/500_スイッチルーティングモードブロック図.png" />
 
 下記のスイッチ設定でスイッチルーティングモードで動作します。
 
@@ -79,7 +80,7 @@ USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理�
 出力先選択スイッチが全てOFFの場合、そのMIDI INに入ってきた信号はUSBだけに送られます。
 
 ## プログラムモード
-<img width="614" height="588" alt="image" src="https://github.com/user-attachments/assets/bca6a041-0e9e-428a-a3c7-4864aa2c6db4" />
+<img width="614" height="588" alt="image" src="images/600_プログラムモードブロック図.png" />
 
 下記のスイッチ設定でプログラムモードで動作します。
 
@@ -109,7 +110,7 @@ macOS専用で、GitHubで公開しています。
 また、パッチを選択するプログラムチェンジ、バンクセレクト、コントロールチェンジはMIDI OUT、およびUSBには送信されません。
 
 ### 本体内でのパッチデータの扱い
-<img width="607" height="264" alt="image" src="https://github.com/user-attachments/assets/248c90f4-9763-4c46-970d-a2f7d91ee367" />
+<img width="607" height="264" alt="image" src="images/700_パッチデータのメモリ構造.png" />
 
 パッチデータは電源を切っても消えない内蔵ストレージに保存されています。\
 電源投入後、内蔵ストレージからメモリーに読み出されます。\
