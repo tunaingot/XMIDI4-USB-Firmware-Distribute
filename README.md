@@ -29,7 +29,7 @@ USBメモリの中に、このページからダウンロードした拡張子�
 - アップデート中に停電などで中断しても、1からやり直せば再度書き込みができます
 
 # 各部の名称と機能
-<img width="798" height="673" alt="image" src="images/300.png" />
+<img width="636" height="537" alt="image" src="images/300.png" />
 
 1. MIDI INインジケータ : MIDI入力があると点滅します
 2. MIDI OUTインジケータ : MIDI OUTに出力されると点滅します
