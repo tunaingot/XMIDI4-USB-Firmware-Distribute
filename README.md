@@ -56,7 +56,7 @@ USBメモリの中に、このページからダウンロードした拡張子�
 
 MIDI INの出力先は下表のように固定です。\
 フィルタ設定、チャンネルマッピング設定はなく、MIDI INに来た信号すべてをそのままMIDI OUTに出力します。\
-USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理して出力されます。
+USBの入出力は行われ、MIDI OUTはMIDI INとUSBをマージ(ミキシング)して出力されます。
 
 |MIDI IN|MIDI OUT出力先|
 | :----------:| :-----------: |
@@ -76,9 +76,9 @@ USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理�
 
 MIDI INの出力先は④MIDI IN出力先選択のスイッチで選択したMIDI OUTに出力されます。\
 フィルタ設定、チャンネルマッピング設定はなく、MIDI INに来た信号全てをそのまま選択したMIDI OUTに出力します。\
-USBの入出力は行われ、MIDI OUTはMIDI INとUSBをミキシング処理して出力されます。
+USBの入出力は行われ、MIDI OUTはMIDI INとUSBをマージ(ミキシング)して出力されます。
 
-異なるMIDI INで同じMIDI OUTを選択した場合、ミキシング処理してMIDI OUTに出力します。\
+異なるMIDI INで同じMIDI OUTを選択した場合、マージ(ミキシング)してMIDI OUTに出力します。\
 出力先選択スイッチが全てOFFの場合、そのMIDI INに入ってきた信号はUSBだけに送られます。
 
 ## プログラムモード
